@@ -1,0 +1,23 @@
+{
+  "titre": "Taux de pertes en eau potable — projection illustrative",
+  "source": "Observatoire de l'eau Guadeloupe (données publiques retraitées)",
+  "taux_pertes_global": {"2022": 68, "2023": 64, "2024": 61, "2025": 58},
+  "rendement_robinet": 35,
+  "objectif_pertes": 50,
+  "message": "Pour 1 litre mis en distribution, environ 0,35 litre arrive au robinet. Le programme vise une amélioration mesurable sur 3 ans.",
+  "par_commune": [
+    {"commune":"Les Abymes","pertes":72},
+    {"commune":"Pointe-à-Pitre","pertes":69},
+    {"commune":"Baie-Mahault","pertes":65},
+    {"commune":"Le Moule","pertes":61},
+    {"commune":"Le Gosier","pertes":58},
+    {"commune":"Basse-Terre","pertes":54},
+    {"commune":"Sainte-Anne","pertes":52}
+  ],
+  "serie": [
+    {"annee":2022,"pertes":68,"rendement":32},
+    {"annee":2023,"pertes":64,"rendement":36},
+    {"annee":2024,"pertes":61,"rendement":39},
+    {"annee":2025,"pertes":58,"rendement":42}
+  ]
+}

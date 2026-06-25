@@ -23,10 +23,17 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--texte
 .btn-secondaire{background:#fff;color:var(--bleu);border:1px solid var(--bleu);border-radius:var(--radius);
   padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer}
 .btn-secondaire:hover{background:#f0f7ff}
+.btn-gris{background:#eef2f6;color:var(--texte);border:0;border-radius:var(--radius);
+  padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer}
+.btn-gris:hover{background:#e1e7ed}
+.btn-gris.active{background:var(--bleu);color:#fff}
 .mention{color:var(--gris);font-size:12px;margin-top:1.6em}
 
 /* Dashboard */
 #dashboard{display:flex;flex-direction:column;min-height:100vh}
+#cockpit-header{background:var(--texte);color:#fff;padding:10px 18px;display:flex;justify-content:space-between;align-items:center}
+.cockpit-titre{font-size:13px;letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.cockpit-badge{background:var(--eau);font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px}
 #tabs{display:flex;flex-wrap:wrap;gap:4px;background:var(--bleu);padding:10px 14px;align-items:center}
 .tab{background:transparent;color:#cfe2f5;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600}
 .tab:hover{background:rgba(255,255,255,.1);color:#fff}
@@ -38,6 +45,23 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--texte
 .onglet[hidden]{display:none}
 
 /* Vue d'ensemble */
+.kpi-bandeau{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:20px}
+.kpi-carte{background:var(--carte);border-radius:var(--radius);box-shadow:var(--ombre);padding:16px;text-align:center}
+.kpi-valeur{font-size:32px;font-weight:800;color:var(--bleu)}
+.kpi-valeur.alerte{color:var(--alerte)}
+.kpi-valeur.ok{color:var(--ok)}
+.kpi-label{font-size:13px;color:var(--gris);margin-top:4px}
+.kpi-soustitre{font-size:12px;color:var(--gris);margin-top:8px}
+.cascade-eau{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0;flex-wrap:wrap}
+.cascade-etape{background:var(--carte);border-radius:var(--radius);box-shadow:var(--ombre);padding:12px 16px;text-align:center;min-width:110px}
+.cascade-etape i{display:block;font-size:24px;margin-bottom:4px}
+.cascade-fleche{font-size:20px;color:var(--gris)}
+.cascade-perte{color:var(--alerte);font-weight:700;font-size:13px}
+.graph-ligne{position:relative;height:140px;background:var(--carte);border-radius:var(--radius);box-shadow:var(--ombre);padding:16px;margin-top:14px}
+.graph-barres{display:flex;align-items:flex-end;justify-content:space-around;height:80px;gap:10px;padding:0 10px}
+.graph-barre{width:18%;border-radius:6px 6px 0 0;background:var(--bleu);position:relative;transition:height .6s}
+.graph-barre span{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--gris);white-space:nowrap}
+.graph-legende{font-size:12px;color:var(--gris);margin-top:28px;text-align:center}
 .overview-tete{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .overview-soustitre{color:var(--gris);font-size:14px;margin:-8px 0 12px}
 .filtre{font-size:14px;color:var(--bleu);font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;background:#fff;padding:8px 12px;border-radius:8px;box-shadow:var(--ombre)}
@@ -60,7 +84,7 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--texte
 #carte{height:60vh;min-height:360px;border-radius:var(--radius);box-shadow:var(--ombre);flex:1}
 .map-tete{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px}
 .map-soustitre{color:var(--gris);font-size:13px;margin:0}
-.map-legende{font-size:13px;color:var(--gris);display:flex;gap:14px;align-items:center;margin:0 0 12px}
+.map-legende{font-size:13px;color:var(--gris);display:flex;gap:14px;align-items:center;margin:0 0 12px;flex-wrap:wrap}
 .pastille{width:12px;height:12px;border-radius:50%;background:var(--c);display:inline-block;margin-right:5px}
 .carte-layout{display:flex;gap:16px;align-items:stretch}
 .feed-panel{width:320px;max-height:60vh;min-height:360px;background:var(--carte);border-radius:var(--radius);box-shadow:var(--ombre);padding:16px;display:flex;flex-direction:column}
@@ -90,11 +114,12 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--texte
 .modale-contenu label{display:block;margin-bottom:14px;font-weight:600;font-size:14px}
 .modale-contenu select{width:100%;margin-top:6px;padding:10px;border-radius:6px;border:1px solid #ccd6e0;font-size:14px}
 .modale-info{color:var(--gris);font-size:13px;margin:8px 0 18px}
-.modale-actions{display:flex;justify-content:flex-end;gap:10px}
+.modale-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+.modale-actions button{flex:1;min-width:120px}
 
 /* Magasin */
 .reco{background:#eaf4fb;border-left:4px solid var(--bleu-clair);padding:12px 14px;border-radius:8px;max-width:760px}
-.magasin-sections{display:flex;gap:8px;margin:18px 0 12px}
+.magasin-sections{display:flex;gap:8px;margin:18px 0 12px;flex-wrap:wrap}
 .magasin-sections button{background:#fff;border:1px solid var(--bleu);color:var(--bleu);padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600}
 .magasin-sections button.active{background:var(--bleu);color:#fff}
 .tbl-stock{width:100%;border-collapse:collapse;margin-top:16px;background:var(--carte);box-shadow:var(--ombre);border-radius:var(--radius);overflow:hidden}
@@ -123,7 +148,44 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--texte
 .meteo-h{font-family:monospace;color:var(--bleu)}
 .meteo-d{color:var(--gris);font-size:13px;margin:0}
 #carte-meteo{height:55vh;min-height:320px;border-radius:var(--radius);box-shadow:var(--ombre);margin-bottom:16px}
-.meteo-legende{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--gris);margin-bottom:12px}
+.meteo-legende{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--gris);margin-bottom:12px;flex-wrap:wrap}
+
+/* Taux de pertes */
+#carte-pertes{height:55vh;min-height:320px;border-radius:var(--radius);box-shadow:var(--ombre);margin-bottom:16px}
+.pertes-legende{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--gris);margin-bottom:12px;flex-wrap:wrap}
+.pertes-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:16px}
+.perte-carte{background:var(--carte);border-radius:var(--radius);box-shadow:var(--ombre);padding:12px;display:flex;justify-content:space-between;align-items:center}
+.perte-nom{font-weight:700;font-size:14px}
+.perte-val{font-size:18px;font-weight:800}
+.perte-val.fort{color:var(--alerte)}
+.perte-val.moyen{color:var(--intervention)}
+.perte-val.faible{color:var(--ok)}
+
+/* Agenda travaux */
+.filtres-agenda{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}
+.agenda-layout{display:flex;gap:16px;align-items:stretch}
+#carte-agenda{height:55vh;min-height:320px;border-radius:var(--radius);box-shadow:var(--ombre);flex:1}
+.agenda-liste{width:360px;max-height:55vh;overflow-y:auto;background:var(--carte);border-radius:var(--radius);box-shadow:var(--ombre);padding:16px}
+.agenda-liste h4{margin:0 0 10px}
+.agenda-item{padding:10px 0;border-bottom:1px solid #eef2f6}
+.agenda-item:last-child{border-bottom:0}
+.agenda-statut{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;color:#fff;background:var(--gris);display:inline-block;margin-bottom:4px}
+.agenda-statut.en_cours{background:var(--intervention)}
+.agenda-statut.a_venir{background:var(--bleu-clair)}
+.agenda-statut.effectue{background:var(--ok)}
+.agenda-titre{font-weight:700;font-size:14px}
+.agenda-meta{color:var(--gris);font-size:12px}
+
+/* Notifications usagers */
+.telephone-cadre{max-width:360px;margin:0 auto;background:#1a1a1a;border-radius:32px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.telephone-ecran{background:#fff;border-radius:24px;overflow:hidden;height:520px;display:flex;flex-direction:column}
+.telephone-entete{background:var(--bleu);color:#fff;padding:12px 16px;text-align:center}
+.telephone-entete h3{margin:0;font-size:14px}
+.telephone-entete span{font-size:11px;opacity:.9}
+.telephone-flux{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:#e5ddd5}
+.notif-bulle{background:#fff;border-radius:12px;padding:10px 12px;font-size:13px;box-shadow:0 1px 2px rgba(0,0,0,.1);animation:apparait .3s}
+.notif-heure{font-size:11px;color:var(--gris);margin-bottom:2px}
+.telephone-mention{padding:10px;text-align:center;font-size:11px;color:var(--gris);background:#f8fafc}
 
 /* Travailler ensemble */
 .phases{list-style:none;counter-reset:p;padding:0;max-width:820px}
@@ -146,14 +208,24 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--texte
 .msg-geo{display:block;color:var(--gris);font-size:12px;margin-top:4px}
 @keyframes apparait{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 
+/* Pin signalement (carte) */
+.leaflet-div-icon.pin-wrap,.leaflet-div-icon.travaux-pin{background:transparent;border:0}
+.pin{width:20px;height:20px;background:var(--pin);border:2px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 5px rgba(0,0,0,.35);animation:pinPop .35s ease-out}
+@keyframes pinPop{0%{transform:rotate(-45deg) scale(0)}70%{transform:rotate(-45deg) scale(1.25)}100%{transform:rotate(-45deg) scale(1)}}
+.travaux-ico{font-size:20px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+
+/* Référent météo */
+.meteo-ref{color:var(--bleu);font-size:12px;margin:6px 0 0;font-weight:600}
+
 /* Responsive */
 @media (max-width:760px){
-  .carte-layout{flex-direction:column}
-  .feed-panel{width:100%;max-height:40vh;min-height:auto}
-  #carte{height:45vh}
+  .carte-layout,.agenda-layout{flex-direction:column}
+  .feed-panel,.agenda-liste{width:100%;max-height:40vh;min-height:auto}
+  #carte,#carte-agenda{height:45vh}
   .map-tete{flex-direction:column;align-items:flex-start}
   .modale-actions{flex-direction:column}
   .modale-actions button{width:100%}
+  .kpi-bandeau{grid-template-columns:1fr}
 }
 @media (max-width:640px){
   #tabs{overflow-x:auto;flex-wrap:nowrap}
@@ -162,4 +234,5 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--texte
   .onglet{padding:16px}
   #badge-projection{font-size:11px;padding:4px 8px}
   .overview-tete{flex-direction:column;align-items:flex-start}
+  .telephone-cadre{max-width:100%}
 }

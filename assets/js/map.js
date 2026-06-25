@@ -105,10 +105,17 @@ async function construireCarte(){
   });
 }
 
+function makePin(color){
+  return L.divIcon({
+    className:'pin-wrap',
+    html:`<div class="pin" style="--pin:${color}"></div>`,
+    iconSize:[22,30], iconAnchor:[11,28], popupAnchor:[0,-26]
+  });
+}
+
 function addMarker(lat,lon,titre,type,statut,popupExtra=''){
   const color = COULEUR[statut] || COULEUR.intervention;
-  const m = L.circleMarker([lat,lon],
-    {radius:9,color:'#fff',weight:2,fillColor:color,fillOpacity:.9,className:'marker-appear'})
+  const m = L.marker([lat,lon], {icon: makePin(color)})
     .bindPopup(`<b>${titre}</b><br>${type}<br><i>${statut}</i>${popupExtra?'<br>'+popupExtra:''}<br><small>Donnée illustrative</small>`)
     .addTo(markersLayer);
   return m;
