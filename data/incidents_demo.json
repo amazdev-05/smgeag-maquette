@@ -1,0 +1,10 @@
+[
+  {"zone":"Pointe-à-Pitre centre","type":"Fuite réseau","statut":"panne","lat":16.241,"lon":-61.534},
+  {"zone":"Les Abymes — Grand Camp","type":"Coupure programmée","statut":"intervention","lat":16.271,"lon":-61.510},
+  {"zone":"Le Gosier","type":"Pression faible","statut":"intervention","lat":16.206,"lon":-61.491},
+  {"zone":"Baie-Mahault — Jarry","type":"Casse canalisation","statut":"panne","lat":16.250,"lon":-61.566},
+  {"zone":"Sainte-Anne","type":"Rétabli","statut":"resolu","lat":16.226,"lon":-61.380},
+  {"zone":"Le Moule","type":"Tour d'eau actif","statut":"intervention","lat":16.331,"lon":-61.348},
+  {"zone":"Basse-Terre centre","type":"Fuite détectée","statut":"panne","lat":15.998,"lon":-61.726},
+  {"zone":"Petit-Bourg","type":"Rétabli","statut":"resolu","lat":16.190,"lon":-61.591}
+]

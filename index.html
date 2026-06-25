@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMGEAG — Centre opérationnel (projection)</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div id="badge-projection">Données illustratives — projection</div>
+
+  <main id="accueil" class="vue active">
+    <section class="hero-accueil">
+      <p class="kicker">Discours de prise de fonction — 24 juin</p>
+      <h1>Vous avez nommé 12 chantiers.<br>La moitié reposent sur un système d'information<br>que la maison n'a pas encore.</h1>
+      <p class="sous">Vous recrutez votre DSI. Voici, en maquette, le centre opérationnel que vous décrivez — l'étage au-dessus de votre carte des tours d'eau.</p>
+      <button id="entrer" class="btn-primaire">Entrer dans le centre opérationnel →</button>
+      <p class="mention">Démonstration. Toutes les données sont illustratives.</p>
+    </section>
+  </main>
+
+  <div id="dashboard" class="vue" hidden>
+    <nav id="tabs">
+      <button class="tab active" data-cible="onglet-overview">Vue d'ensemble</button>
+      <button class="tab" data-cible="onglet-map">Carte Guadeloupe</button>
+      <button class="tab" data-cible="onglet-magasin">Magasin de pièces</button>
+      <button class="tab" data-cible="onglet-meteo">Météo de l'eau</button>
+      <button class="tab" data-cible="onglet-ensemble">Travailler ensemble</button>
+      <button class="tab tab-cache" data-cible="onglet-live" id="tab-live" hidden>● Temps réel</button>
+    </nav>
+    <section id="onglet-overview" class="onglet"></section>
+    <section id="onglet-map" class="onglet" hidden></section>
+    <section id="onglet-magasin" class="onglet" hidden></section>
+    <section id="onglet-meteo" class="onglet" hidden></section>
+    <section id="onglet-ensemble" class="onglet" hidden></section>
+    <section id="onglet-live" class="onglet" hidden></section>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

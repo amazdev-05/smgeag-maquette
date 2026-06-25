@@ -1,0 +1,14 @@
+[
+  {"n":1,"titre":"Contrat pluriannuel d'objectifs + contrat financier d'urgence (juil.→déc. 2026)","etat":"a_construire","porteur":"Présidence / élus","urgence":"haute","si":false},
+  {"n":2,"titre":"Magasin de pièces (stock réparations canalisations) — inexistant","etat":"inexistant","porteur":"Exploitation","urgence":"haute","si":true},
+  {"n":3,"titre":"Relance continuité service eau potable (zones rurales/économiques)","etat":"a_relancer","porteur":"Direction + Département","urgence":"moyenne","si":false},
+  {"n":4,"titre":"Distribution d'eau de crise organisée (artisans, fonds solidarité)","etat":"a_construire","porteur":"Affaires sociales","urgence":"moyenne","si":false},
+  {"n":5,"titre":"Rapprochement clients : élu référent + agents-interface par commune","etat":"a_construire","porteur":"Communes","urgence":"moyenne","si":"partiel"},
+  {"n":6,"titre":"Gestion RH du transfert de personnel communes ↔ syndicat","etat":"a_cadrer","porteur":"RH","urgence":"moyenne","si":false},
+  {"n":7,"titre":"Pôle médiation + métrologie compteurs (fracture facture)","etat":"a_construire","porteur":"Direction clientèle","urgence":"moyenne","si":"partiel"},
+  {"n":8,"titre":"Chèque eau (modèle chèque énergie, avec la CAF)","etat":"a_construire","porteur":"Social / CAF","urgence":"basse","si":false},
+  {"n":9,"titre":"Carte SOLID'O (solidarité usagers)","etat":"prototype","porteur":"Présidence","urgence":"basse","si":"partiel"},
+  {"n":10,"titre":"Modèle de gestion quantifié/chiffré pour anticiper + prix solidaire","etat":"a_construire","porteur":"Direction","urgence":"haute","si":true},
+  {"n":11,"titre":"Logiciel réseau + centre opérationnel + écran géant (contrat indexé résultat)","etat":"en_cours","porteur":"Direction technique","urgence":"haute","si":true},
+  {"n":12,"titre":"Création DSI + IA factures/anomalies + SMS usager + météo de l'eau + SIG","etat":"inexistant","porteur":"DSI (à recruter)","urgence":"haute","si":true}
+]

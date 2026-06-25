@@ -1,0 +1,7 @@
+[
+  {"ref":"PVC-110","designation":"Tube PVC Ø110 (ml)","stock":12,"seuil":40,"statut":"critique"},
+  {"ref":"VAN-DN80","designation":"Vanne fonte DN80","stock":5,"seuil":8,"statut":"bas"},
+  {"ref":"COL-110","designation":"Collier de réparation Ø110","stock":63,"seuil":30,"statut":"ok"},
+  {"ref":"CMP-15","designation":"Compteur DN15","stock":140,"seuil":100,"statut":"ok"},
+  {"ref":"RAC-MUL","designation":"Raccord multi-matériaux","stock":7,"seuil":25,"statut":"critique"}
+]

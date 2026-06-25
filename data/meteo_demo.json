@@ -1,0 +1,7 @@
+[
+  {"commune":"Les Abymes","etat":"coupure","debut":"06:00","reouverture":"14:00","detail":"Tour d'eau secteur Grand Camp"},
+  {"commune":"Le Gosier","etat":"normal","debut":"-","reouverture":"-","detail":"Service nominal"},
+  {"commune":"Baie-Mahault","etat":"travaux","debut":"08:00","reouverture":"17:00","detail":"Réparation casse Jarry"},
+  {"commune":"Le Moule","etat":"coupure","debut":"05:00","reouverture":"12:00","detail":"Tour d'eau programmé"},
+  {"commune":"Basse-Terre","etat":"travaux","debut":"07:30","reouverture":"16:00","detail":"Recherche de fuite"}
+]
