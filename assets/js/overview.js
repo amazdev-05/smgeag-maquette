@@ -5,8 +5,8 @@ export async function initOverview(){
   const cont = document.getElementById('onglet-overview');
   const data = await fetch('data/chantiers_demo.json').then(r=>r.json());
   cont.innerHTML = `
-    <h2>Les 12 chantiers de votre discours</h2>
-    <p class="overview-soustitre">D'après le discours de prise de fonction d'<b>Henri Yacou, président du SMGEAG</b> (24 juin).</p>
+    <h2>Discours de prise de fonction — les 12 chantiers nommés par M. Yacou</h2>
+    <p class="overview-soustitre">D'après le discours de prise de fonction d'<b>Henri Yacou, président du SMGEAG</b> (24 juin). La moitié de ces chantiers reposent sur un système d'information que la maison n'a pas encore — le SMGEAG recrute son DSI.</p>
     <div class="overview-tete">
       <div></div>
       <label class="filtre"><input type="checkbox" id="filtre-si"> Surligner le périmètre Système d'Information (DSI)</label>

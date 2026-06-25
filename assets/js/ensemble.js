@@ -10,7 +10,7 @@ export async function initEnsemble(){
   const cont = document.getElementById('onglet-ensemble');
   cont.innerHTML = `
     <h2>Travailler ensemble</h2>
-    <p class="reco">Une méthode, par étapes. On commence petit et concret, on prouve, on étend. Aucun tarif ici : on cadre ensemble en fonction de vos priorités.</p>
+    <p class="reco">Une méthode, par étapes. On commence petit et concret, on prouve, on étend.</p>
     <ol class="phases">
       <li>
         <h3>Phase 0 — Diagnostic flash du SI</h3>
@@ -20,6 +20,13 @@ export async function initEnsemble(){
           ${listeDsi(dsi)}
         </ul>
         ${partiels.length ? `<p>Et les chantiers à composante SI partielle :</p><ul class="liste-dsi">${listeDsi(partiels)}</ul>` : ''}
+        <p>J'inventorie aussi les briques d'<b>intelligence artificielle</b> que vous avez annoncées, pour les cadrer, les sécuriser et les rendre opérationnelles :</p>
+        <ul class="liste-dsi">
+          <li>IA de traitement des factures & détection d'anomalies</li>
+          <li>Notifications usagers (coupures / reprises / travaux à venir)</li>
+          <li>Chatbot en créole pour la relation usager</li>
+          <li>Analyse des réseaux sociaux (réclamations, signaux faibles)</li>
+        </ul>
         <button class="btn-demo" id="voir-demo-signal">▶ Voir le mécanisme de signalement en action</button>
       </li>
       <li>
@@ -39,10 +46,13 @@ export async function initEnsemble(){
         <p>On définit ensemble les indicateurs (temps de réponse incident, taux de signalements résolus, ruptures de stock, etc.) et la rémunération liée à l'atteinte.</p>
       </li>
     </ol>
+    <div class="idee-proposee">
+      <b>💡 Idée à proposer</b> — une vue « tours d'eau » intelligente : visualiser et anticiper les rotations de distribution par secteur. À concevoir ensemble si le sujet vous intéresse.
+    </div>
     <div class="cta">
       <p><b>Si la projection vous parle, parlons-en.</b></p>
-      <p>Ronnie Capra — Synergy-BIM · Ingénieur VRD & BIM</p>
-      <p class="mention">Aucun tarif ici : on cadre ensemble en fonction de vos priorités et de votre budget.</p>
+      <p>Ronnie Capra — Synergy-BIM · Ingénieur VRD, BIM & SI</p>
+      <p class="mention">On cadre ensemble en fonction de vos priorités et de votre budget.</p>
     </div>`;
 
   document.getElementById('voir-demo-signal').addEventListener('click', () => {

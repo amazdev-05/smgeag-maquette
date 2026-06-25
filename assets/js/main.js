@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     initAgenda()
   ]);
 
-  document.getElementById('entrer').addEventListener('click', () => {
-    document.getElementById('accueil').classList.remove('active');
-    document.getElementById('accueil').hidden = true;
-    document.getElementById('dashboard').classList.add('active');
-    document.getElementById('dashboard').hidden = false;
-  });
+  // Centre opérationnel = l'ensemble du site : on ouvre directement le dashboard, toutes tuiles visibles.
+  const accueil = document.getElementById('accueil');
+  if(accueil){ accueil.classList.remove('active'); accueil.hidden = true; }
+  const dash = document.getElementById('dashboard');
+  dash.classList.add('active');
+  dash.hidden = false;
 });

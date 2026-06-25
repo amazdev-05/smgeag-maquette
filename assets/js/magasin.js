@@ -54,11 +54,22 @@ export async function initMagasin(){
 function renderStock(data){
   return `
     <h3>Stock pièces — aujourd'hui inexistant</h3>
-    <table class="tbl-stock"><thead><tr><th>Réf.</th><th>Désignation</th><th>Stock</th><th>Seuil</th><th>État</th></tr></thead>
-    <tbody>${data.map(p=>`<tr class="st-${p.statut}">
-      <td>${p.ref}</td><td>${p.designation}</td><td>${p.stock}</td><td>${p.seuil}</td>
-      <td><span class="puce">${p.statut}</span></td></tr>`).join('')}</tbody></table>
-    <p class="mention">Inventaire illustratif — projection de ce que donnerait l'outil.</p>`;
+    <table class="tbl-stock"><thead><tr><th>Réf.</th><th>Désignation</th><th>Niveau (stock / seuil)</th><th>Approvisionnement</th><th>État</th></tr></thead>
+    <tbody>${data.map(p=>{
+      const pct = Math.min(100, Math.round(p.stock / p.seuil * 100));
+      const appro = p.commande > 0
+        ? `${p.etat_appro} · +${p.commande} → ${p.arrivee}`
+        : p.etat_appro;
+      return `<tr class="st-${p.statut}">
+      <td>${p.ref}</td><td>${p.designation}</td>
+      <td>
+        <div class="barre-stock"><span class="barre-fill st-fill-${p.statut}" style="width:${pct}%"></span></div>
+        <small class="barre-txt">${p.stock} / ${p.seuil}</small>
+      </td>
+      <td class="appro-cell">${p.commande > 0 ? '📦' : '✓'} ${appro}</td>
+      <td><span class="puce">${p.statut}</span></td></tr>`;
+    }).join('')}</tbody></table>
+    <p class="mention">Inventaire illustratif — projection de ce que donnerait l'outil (Odoo Inventory).</p>`;
 }
 
 function renderCommunes(data){

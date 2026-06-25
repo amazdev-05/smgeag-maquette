@@ -1,7 +1,9 @@
 [
-  {"ref":"PVC-110","designation":"Tube PVC Ø110 (ml)","stock":12,"seuil":40,"statut":"critique"},
-  {"ref":"VAN-DN80","designation":"Vanne fonte DN80","stock":5,"seuil":8,"statut":"bas"},
-  {"ref":"COL-110","designation":"Collier de réparation Ø110","stock":63,"seuil":30,"statut":"ok"},
-  {"ref":"CMP-15","designation":"Compteur DN15","stock":140,"seuil":100,"statut":"ok"},
-  {"ref":"RAC-MUL","designation":"Raccord multi-matériaux","stock":7,"seuil":25,"statut":"critique"}
+  {"ref":"PVC-110","designation":"Tube PVC Ø110 (ml)","stock":12,"seuil":40,"statut":"critique","commande":60,"arrivee":"02/07","etat_appro":"Commande en cours"},
+  {"ref":"VAN-DN80","designation":"Vanne fonte DN80","stock":5,"seuil":8,"statut":"bas","commande":10,"arrivee":"05/07","etat_appro":"Réapprovisionnement"},
+  {"ref":"COL-110","designation":"Collier de réparation Ø110","stock":63,"seuil":30,"statut":"ok","commande":0,"arrivee":"—","etat_appro":"Stock suffisant"},
+  {"ref":"CMP-15","designation":"Compteur DN15","stock":140,"seuil":100,"statut":"ok","commande":0,"arrivee":"—","etat_appro":"Stock suffisant"},
+  {"ref":"RAC-MUL","designation":"Raccord multi-matériaux","stock":7,"seuil":25,"statut":"critique","commande":40,"arrivee":"03/07","etat_appro":"Commande en cours"},
+  {"ref":"PEHD-160","designation":"Conduite PEHD Ø160 (ml)","stock":85,"seuil":60,"statut":"ok","commande":0,"arrivee":"—","etat_appro":"Stock suffisant"},
+  {"ref":"BRD-25","designation":"Branchement plomb-souple Ø25","stock":18,"seuil":50,"statut":"bas","commande":80,"arrivee":"08/07","etat_appro":"Réapprovisionnement"}
 ]
