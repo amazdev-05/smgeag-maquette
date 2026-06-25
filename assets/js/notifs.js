@@ -10,10 +10,33 @@ export function initNotifs(){
   });
 }
 
+function phone(titre, sousTitre, fluxId, contenu){
+  return `
+    <div class="telephone-cadre">
+      <div class="telephone-ecran">
+        <div class="tel-statusbar"><span>9:41</span><span class="tel-status-ico">📶 &nbsp;🔋</span></div>
+        <div class="telephone-entete wa">
+          <span class="wa-back">‹</span>
+          <span class="wa-avatar">💧</span>
+          <div class="wa-id"><b>${titre}</b><small>${sousTitre}</small></div>
+        </div>
+        <div class="telephone-flux" id="${fluxId}">${contenu}</div>
+        <div class="tel-input"><span class="tel-input-zone">Message…</span><span class="tel-send">➤</span></div>
+        <div class="tel-home"></div>
+      </div>
+    </div>`;
+}
+
 async function construireNotifs(){
   const cont = document.getElementById('onglet-notifs');
   const alertes = await fetch('data/notifs_demo.json').then(r=>r.json());
   const signalements = await fetch('data/live_demo.json').then(r=>r.json());
+
+  const bullesB = signalements.map(s=>`
+    <div class="notif-bulle envoye">
+      <div class="bulle-txt">${s.msg}</div>
+      <div class="bulle-meta">${s.h} · ${s.type}${s.etat_eau?' · '+s.etat_eau:''} <span class="tick">✓✓</span></div>
+    </div>`).join('');
 
   cont.innerHTML = `
     <h2>Notifications usagers — la relation va dans les deux sens</h2>
@@ -21,24 +44,14 @@ async function construireNotifs(){
     <div class="telephones-duo">
       <div>
         <p class="telephone-titre-mini">📲 SMGEAG → abonnés (alertes)</p>
-        <div class="telephone-cadre"><div class="telephone-ecran">
-          <div class="telephone-entete"><h3>SMGEAG · Alertes eau</h3><span>messages aux abonnés</span></div>
-          <div class="telephone-flux" id="tel-flux-a"></div>
-          <div class="telephone-mention">Messages illustratifs — projection</div>
-        </div></div>
+        ${phone('SMGEAG · Alertes eau','en ligne','tel-flux-a','')}
       </div>
       <div>
         <p class="telephone-titre-mini">📩 Abonnés → SMGEAG (signalements)</p>
-        <div class="telephone-cadre"><div class="telephone-ecran">
-          <div class="telephone-entete"><h3>Signalements reçus</h3><span>remontées terrain géolocalisées</span></div>
-          <div class="telephone-flux" id="tel-flux-b">${signalements.map(s=>`
-            <div class="notif-bulle envoye">
-              <div class="notif-heure">${s.h} · ${s.type}${s.etat_eau?' · '+s.etat_eau:''}</div>${s.msg}
-            </div>`).join('')}</div>
-          <div class="telephone-mention">Mêmes signalements que sur la carte — projection</div>
-        </div></div>
+        ${phone('Signalements reçus','remontées géolocalisées','tel-flux-b',bullesB)}
       </div>
-    </div>`;
+    </div>
+    <p class="mention">Messages illustratifs — projection.</p>`;
 
   const flux = document.getElementById('tel-flux-a');
   let i = 0;
@@ -47,7 +60,7 @@ async function construireNotifs(){
     const m = alertes[i % alertes.length];
     const el = document.createElement('div');
     el.className = 'notif-bulle';
-    el.innerHTML = `<div class="notif-heure">${m.h}</div>${m.msg}`;
+    el.innerHTML = `<div class="bulle-txt">${m.msg}</div><div class="bulle-meta">${m.h} <span class="tick">✓✓</span></div>`;
     flux.appendChild(el);
     flux.scrollTop = flux.scrollHeight;
     if(flux.children.length > 12) flux.removeChild(flux.firstChild);
