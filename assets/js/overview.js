@@ -7,6 +7,14 @@ export async function initOverview(){
   cont.innerHTML = `
     <h2>Discours de prise de fonction — les 12 chantiers nommés par M. Yacou</h2>
     <p class="overview-soustitre">D'après le discours de prise de fonction d'<b>Henri Yacou, président du SMGEAG</b> (24 juin). La moitié de ces chantiers reposent sur un système d'information que la maison n'a pas encore — le SMGEAG recrute son DSI.</p>
+    <div class="audit-pitch">
+      <b>C'est ici que je me positionne.</b> Sur le périmètre Système d'Information (filtre ci-dessous), je propose un <b>audit / état des lieux du SI réalisé AVANT le recrutement de votre DSI</b>. L'intérêt pour vous :
+      <ul>
+        <li>votre futur DSI prend ses fonctions avec une <b>cartographie précise</b> de tout l'existant au SMGEAG ;</li>
+        <li>il a immédiatement des <b>directions de travail claires</b>, sans perdre 5-6 mois à découvrir le terrain ;</li>
+        <li>vous sécurisez les chantiers SI les plus urgents (centre opérationnel, IA factures, magasin) dès maintenant.</li>
+      </ul>
+    </div>
     <div class="overview-tete">
       <div></div>
       <label class="filtre"><input type="checkbox" id="filtre-si"> Surligner le périmètre Système d'Information (DSI)</label>

@@ -73,8 +73,10 @@ function renderStock(data){
 }
 
 function renderCommunes(data){
+  const total = data.reduce((s,c)=> s + (c.prix_previsionnel||0), 0);
   return `
     <h3>Chantiers par commune — vue études de prix</h3>
+    <p class="prix-estimatif">Total prévisionnel tous chantiers : ${total.toLocaleString('fr-FR')} € (estimatif — projection)</p>
     <div class="grille-communes">${data.map((c,idx)=>`
       <article class="carte-commune">
         <h4>${c.commune}</h4>

@@ -1,5 +1,6 @@
 const BOUNDS = L.latLngBounds([15.83,-61.81],[16.52,-61.0]);
 const LIBELLE = {a_venir:'À venir', en_cours:'En cours', effectue:'Effectué'};
+const PICTO = {a_venir:'🗓️', en_cours:'🚧', effectue:'✅'};
 
 let carteInit = false;
 let travaux = [];
@@ -20,6 +21,7 @@ export async function initAgenda(){
       <button class="btn-gris" data-f="en_cours">En cours</button>
       <button class="btn-gris" data-f="effectue">Effectués</button>
     </div>
+    <p class="pertes-legende">🗓️ À venir &nbsp;·&nbsp; 🚧 En cours &nbsp;·&nbsp; ✅ Effectué — cliquez un filtre pour isoler sur la carte et dans la liste</p>
     <div class="agenda-layout">
       <div id="carte-agenda"></div>
       <aside class="agenda-liste"><h4>Chantiers</h4><div id="agenda-items"></div></aside>
@@ -63,7 +65,7 @@ function construireCarteAgenda(){
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:18}).addTo(map);
 
   travaux.forEach(t => {
-    const icon = L.divIcon({className:'travaux-pin', html:`<div class="travaux-ico statut-${t.statut}">🚧</div>`, iconSize:[28,28], iconAnchor:[14,14], popupAnchor:[0,-12]});
+    const icon = L.divIcon({className:'travaux-pin', html:`<div class="travaux-ico statut-${t.statut}">${PICTO[t.statut]||'🚧'}</div>`, iconSize:[28,28], iconAnchor:[14,14], popupAnchor:[0,-14]});
     const m = L.marker([t.lat,t.lon], {icon})
       .bindPopup(`<b>${t.intitule}</b><br>${t.commune}<br>${LIBELLE[t.statut]} · ${t.debut}${t.fin&&t.fin!==t.debut?' → '+t.fin:''}<br><small>Projection</small>`)
       .addTo(map);

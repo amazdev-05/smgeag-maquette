@@ -229,6 +229,34 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--texte
 /* Référent météo */
 .meteo-ref{color:var(--bleu);font-size:12px;margin:6px 0 0;font-weight:600}
 
+/* Bandeau fixe */
+#topbar{position:sticky;top:0;z-index:600;box-shadow:0 2px 8px rgba(17,36,58,.12)}
+
+/* Bloc pitch audit (vue d'ensemble) */
+.audit-pitch{background:#eaf4fb;border-left:4px solid var(--bleu);border-radius:8px;padding:14px 16px;margin:14px 0;max-width:920px}
+.audit-pitch b{color:var(--bleu)}
+.audit-pitch ul{margin:8px 0 0;padding-left:18px;color:var(--texte);font-size:14px}
+
+/* Taux de pertes — étiquettes resserrées */
+.pertes-grille{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.perte-carte{padding:10px 12px}
+.perte-nom{font-size:13px}
+.perte-val{font-size:16px}
+
+/* Notifications — duo de téléphones + style WhatsApp */
+.telephones-duo{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+.telephone-entete{background:#075e54}
+.telephone-flux{background:#e5ddd5}
+.notif-bulle{max-width:85%;align-self:flex-start;background:#fff;border-radius:8px 8px 8px 2px}
+.notif-bulle.envoye{align-self:flex-end;background:#dcf8c6;border-radius:8px 8px 2px 8px}
+.telephone-titre-mini{font-size:13px;color:var(--gris);text-align:center;margin:0 0 6px;font-weight:600}
+
+/* Agenda — pictos différenciés par statut */
+.travaux-ico{font-size:18px;line-height:1;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.travaux-ico.statut-a_venir{background:#1c7fd6}
+.travaux-ico.statut-en_cours{background:#e7a13a}
+.travaux-ico.statut-effectue{background:#2e9e5b}
+
 /* Responsive */
 @media (max-width:760px){
   .carte-layout,.agenda-layout{flex-direction:column}

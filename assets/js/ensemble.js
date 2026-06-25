@@ -3,6 +3,9 @@ import { activerOnglet } from './nav.js';
 export async function initEnsemble(){
   const chantiers = await fetch('data/chantiers_demo.json').then(r=>r.json());
   const dsi = chantiers.filter(c => c.si === true);
+  // Remonter #11 (logiciel réseau/centre op/écran géant) et #12 (DSI/IA) en tête
+  const prio = n => (n===11 ? 100 : n===12 ? 99 : 0);
+  dsi.sort((a,b) => prio(b.n) - prio(a.n));
   const partiels = chantiers.filter(c => c.si === 'partiel');
 
   const listeDsi = items => items.map(c => `<li><b>#${c.n}</b> — ${c.titre}</li>`).join('');

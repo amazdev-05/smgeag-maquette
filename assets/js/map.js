@@ -7,6 +7,12 @@ const LIBELLE_TYPE = {
   'Pas d\'eau à l\'arrivée':'Pas d\'eau',
   'Eau revenue à HHhMM':'Eau revenue'
 };
+const COMMUNES = {
+  'Les Abymes':[16.271,-61.510],'Pointe-à-Pitre':[16.241,-61.534],'Le Gosier':[16.206,-61.491],
+  'Baie-Mahault':[16.250,-61.566],'Sainte-Anne':[16.226,-61.380],'Le Moule':[16.331,-61.348],
+  'Basse-Terre':[15.998,-61.726],'Petit-Bourg':[16.190,-61.591],'Petit-Canal':[16.378,-61.420],
+  'Capesterre-Belle-Eau':[16.045,-61.565]
+};
 
 let carteInitialisee = false;
 let map = null;
@@ -66,10 +72,17 @@ async function construireCarte(){
             <option>Odeur</option>
           </select>
         </label>
-        <p class="modale-info">Cliquez sur « Envoyer ma position » pour utiliser votre géolocalisation,<br>ou cliquez sur la carte pour placer le point manuellement.</p>
+        <label>Commune (placement rapide)
+          <select id="signal-commune">
+            <option value="">— choisir une commune —</option>
+            ${Object.keys(COMMUNES).map(c=>`<option value="${c}">${c}</option>`).join('')}
+          </select>
+        </label>
+        <p class="modale-info">3 façons de poser le point :<br>① choisir une commune puis « Placer », ② « Ma position » (géoloc), ③ ou cliquer directement sur la carte.</p>
         <div class="modale-actions">
           <button id="btn-annuler" class="btn-secondaire">Annuler</button>
-          <button id="btn-envoyer" class="btn-primaire">📍 Envoyer ma position</button>
+          <button id="btn-commune" class="btn-secondaire">📌 Placer sur la commune</button>
+          <button id="btn-envoyer" class="btn-primaire">📍 Ma position</button>
         </div>
       </div>
     </div>`;
@@ -97,6 +110,13 @@ async function construireCarte(){
   document.getElementById('btn-declarer').addEventListener('click', ouvrirModale);
   document.getElementById('btn-annuler').addEventListener('click', fermerModale);
   document.getElementById('btn-envoyer').addEventListener('click', envoyerGeoloc);
+  document.getElementById('btn-commune').addEventListener('click', () => {
+    const c = document.getElementById('signal-commune').value;
+    if(!c || !COMMUNES[c]){ alert('Choisissez d\'abord une commune dans la liste.'); return; }
+    const [lat,lon] = COMMUNES[c];
+    ajouterSignal(lat, lon);
+    fermerModale();
+  });
 
   map.on('click', e => {
     if(document.getElementById('modale-signal').hidden) return;

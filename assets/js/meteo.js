@@ -25,7 +25,14 @@ export async function initMeteo(){
       <p class="meteo-h">${m.debut} → ${m.reouverture}</p>
       <p class="meteo-d">${m.detail}</p>
       <p class="meteo-ref">👤 ${refPour(referents, m.commune)}</p></article>`).join('')}</div>
-    <p class="mention">Référents : élus/agents cités ou à nommer — illustratif (projection).</p>`;
+
+    <h3>Tours d'eau — organisation & horaires</h3>
+    <p class="reco">Calendrier des coupures programmées et des reprises par commune, pour que chaque usager s'organise.</p>
+    <table class="tbl-stock">
+      <thead><tr><th>Commune</th><th>État</th><th>Début coupure</th><th>Reprise prévue</th><th>Détail</th></tr></thead>
+      <tbody>${data.map(m=>`<tr><td>${m.commune}</td><td>${m.etat}</td><td>${m.debut}</td><td>${m.reouverture}</td><td>${m.detail}</td></tr>`).join('')}</tbody>
+    </table>
+    <p class="mention">Référents & tours d'eau : illustratif (projection).</p>`;
 
   // Init carte paresseuse au 1er affichage de l'onglet (évite le conteneur masqué)
   document.addEventListener('onglet:active', e => {
