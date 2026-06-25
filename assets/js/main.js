@@ -6,15 +6,18 @@ import { initMeteo } from './meteo.js';
 import { initEnsemble } from './ensemble.js';
 import { initLive } from './live.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   console.log('Maquette SMGEAG — projection. Toutes données fictives.');
   initNav();
-  initOverview();
   initMapLazy();
-  initMagasin();
-  initMeteo();
-  initEnsemble();
   initLive();
+
+  await Promise.all([
+    initOverview(),
+    initMagasin(),
+    initMeteo(),
+    initEnsemble()
+  ]);
 
   document.getElementById('entrer').addEventListener('click', () => {
     document.getElementById('accueil').classList.remove('active');

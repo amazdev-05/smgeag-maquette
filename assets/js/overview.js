@@ -5,14 +5,21 @@ export async function initOverview(){
   const cont = document.getElementById('onglet-overview');
   const data = await fetch('data/chantiers_demo.json').then(r=>r.json());
   cont.innerHTML = `
+    <h2>Les 12 chantiers de votre discours</h2>
+    <p class="overview-soustitre">D'après le discours de prise de fonction d'<b>Henri Yacou, président du SMGEAG</b> (24 juin).</p>
     <div class="overview-tete">
-      <h2>Les 12 chantiers de votre discours</h2>
-      <label class="filtre"><input type="checkbox" id="filtre-si"> Surligner le périmètre Système d'Information</label>
+      <div></div>
+      <label class="filtre"><input type="checkbox" id="filtre-si"> Surligner le périmètre Système d'Information (DSI)</label>
     </div>
     <div class="grille-chantiers">${data.map(carteChantier).join('')}</div>`;
   document.getElementById('filtre-si').addEventListener('change', e => {
-    cont.querySelectorAll('.chantier').forEach(c =>
-      c.classList.toggle('attenue', e.target.checked && c.dataset.si === 'false'));
+    cont.querySelectorAll('.chantier').forEach(c => {
+      const si = c.dataset.si;
+      const estSi = si === 'true' || si === 'partiel';
+      const attenuer = e.target.checked && !estSi;
+      c.classList.toggle('attenue', attenuer);
+      c.classList.toggle('mis-en-avant', e.target.checked && estSi);
+    });
   });
 }
 

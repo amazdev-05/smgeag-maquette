@@ -1,5 +1,6 @@
 [
-  {"h":"02:14","tel":"+590 6•• •• 41 22","msg":"Pa dlo Grand Camp depi yè oswa","lat":16.272,"lon":-61.509},
-  {"h":"02:31","tel":"+590 6•• •• 88 07","msg":"Toujou pa dlo Gosier bord-de-mer","lat":16.205,"lon":-61.493},
-  {"h":"03:02","tel":"+590 6•• •• 12 55","msg":"Coupure Jarry zone industrielle","lat":16.249,"lon":-61.565}
+  {"h":"02:14","tel":"+590 6•• •• 41 22","msg":"Pa dlo Grand Camp depi yè oswa","lat":16.272,"lon":-61.509,"type":"Pas d'eau à l'arrivée","etat_eau":"Claire","statut":"panne"},
+  {"h":"02:31","tel":"+590 6•• •• 88 07","msg":"Toujou pa dlo Gosier bord-de-mer","lat":16.205,"lon":-61.493,"type":"Coupure d'eau","etat_eau":"Trouble","statut":"intervention"},
+  {"h":"03:02","tel":"+590 6•• •• 12 55","msg":"Coupure Jarry zone industrielle","lat":16.249,"lon":-61.565,"type":"Coupure d'eau","etat_eau":"Marron","statut":"panne"},
+  {"h":"05:47","tel":"+590 6•• •• 63 19","msg":"Dlo rivé Grand Camp 05h45, klè","lat":16.270,"lon":-61.511,"type":"Eau revenue à 05h45","etat_eau":"Claire","statut":"resolu"}
 ]

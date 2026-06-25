@@ -1,0 +1,51 @@
+[
+  {
+    "commune": "Le Gosier",
+    "nom": "Grandes Ravines — Réhabilitation AEP",
+    "detail": "Installation de chantier, terrassement, pose canalisation PEHD Nopo Tab 160, réfection des branchements, remblaiement et réception",
+    "lignes": [
+      {"designation": "Installation de chantier", "unite": "mois", "qte": 4},
+      {"designation": "Terrassement tranchée", "unite": "ml", "qte": 450},
+      {"designation": "Canalisation PEHD Nopo Tab Ø160", "unite": "ml", "qte": 420},
+      {"designation": "Réfection branchements", "unite": "u", "qte": 35},
+      {"designation": "Remblaiement et réception", "unite": "forfait", "qte": 1}
+    ],
+    "prix_previsionnel": 287500
+  },
+  {
+    "commune": "Les Abymes",
+    "nom": "Grand Camp — Renforcement adducteur",
+    "detail": "Diagnostic réseau, création d'une conduite de renfort DN200, mise en dérivation temporaire, raccordements existants",
+    "lignes": [
+      {"designation": "Diagnostic réseau", "unite": "j", "qte": 8},
+      {"designation": "Conduite fonte DN200", "unite": "ml", "qte": 320},
+      {"designation": "Vannes et accessoires", "unite": "u", "qte": 12},
+      {"designation": "Mise en dérivation", "unite": "forfait", "qte": 1}
+    ],
+    "prix_previsionnel": 412000
+  },
+  {
+    "commune": "Baie-Mahault",
+    "nom": "Jarry Nord — Extension réseau",
+    "detail": "Raccordement zone industrielle, pose de 280 ml de conduite PVC Ø200, branchements industriels, signalisation chantier",
+    "lignes": [
+      {"designation": "Canalisation PVC Ø200", "unite": "ml", "qte": 280},
+      {"designation": "Branchements industriels", "unite": "u", "qte": 8},
+      {"designation": "Signalisation et sécurité", "unite": "mois", "qte": 2},
+      {"designation": "Essais et mise en service", "unite": "forfait", "qte": 1}
+    ],
+    "prix_previsionnel": 198000
+  },
+  {
+    "commune": "Le Moule",
+    "nom": "Guénette — Remplacement section critique",
+    "detail": "Remplacement de 180 ml de conduite sous-dimensionnée, réfection regard, mise en conformité poste de pompage",
+    "lignes": [
+      {"designation": "Dépose ancienne conduite", "unite": "ml", "qte": 180},
+      {"designation": "Conduite PEHD Ø125", "unite": "ml", "qte": 185},
+      {"designation": "Regard béton", "unite": "u", "qte": 6},
+      {"designation": "Poste de pompage — conformité", "unite": "forfait", "qte": 1}
+    ],
+    "prix_previsionnel": 156000
+  }
+]
